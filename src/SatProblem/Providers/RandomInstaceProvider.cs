@@ -9,9 +9,9 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers
     public class RandomInstaceProvider : IInstaceProvider
     {
         private const int MIN_PRODUCT_LENGTH = 10;
-        private const int MAX_PRODUCT_LENGTH = 20;
+        private const int MAX_PRODUCT_LENGTH = 50;
         private const int MIN_SUM_LENGTH = 2;
-        private const int MAX_SUM_LENGTH = 3;
+        private const int MAX_SUM_LENGTH = 10;
         private const int MIN_WEIGHT = 10;
         private const int MAX_WEIGHT = 50;
 

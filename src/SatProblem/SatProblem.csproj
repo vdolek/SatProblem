@@ -57,6 +57,7 @@
     <Compile Include="Providers\IInstaceProvider.cs" />
     <Compile Include="Providers\RandomInstaceProvider.cs" />
     <Compile Include="Solvers\BrutteForceSolver.cs" />
+    <Compile Include="Solvers\SimulatedAnnealingSolver.cs" />
     <Compile Include="Solvers\ISolver.cs" />
     <Compile Include="Tests\BruteForceSolverTests.cs" />
     <Compile Include="Tests\FormulaTests.cs" />

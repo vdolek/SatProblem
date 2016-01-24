@@ -21,7 +21,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Helpers
         public static EvaluatedConfiguration EvaluateConfiguration(this Instance instance, long configuration)
         {
             var weight = instance.GetWeight(configuration);
-            var res = new EvaluatedConfiguration(configuration, weight);
+            var res = new EvaluatedConfiguration(instance, configuration, weight);
             return res;
         }
     }

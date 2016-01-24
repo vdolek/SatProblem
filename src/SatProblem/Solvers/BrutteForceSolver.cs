@@ -7,7 +7,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
     {
         public EvaluatedConfiguration Solve(Instance instance)
         {
-            var bestConfiguration = new EvaluatedConfiguration(0, 0);
+            var bestConfiguration = new EvaluatedConfiguration(instance, 0, 0);
 
             var max = 1L << instance.VariableCount;
             for (var configuation = 0L; configuation < max; configuation++)
