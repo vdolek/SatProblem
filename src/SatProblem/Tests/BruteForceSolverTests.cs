@@ -9,12 +9,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
     public class BruteForceSolverTests
     {
         [TestMethod]
-        public void TestLogicalSum()
+        public void TestBrutteForce()
         {
             // n = 4 
             // F = (x0 + x2' + x3).(x0' + x1 + x2').(x2 + x3).(x0 + x1 + x2' + x3').(x1' + x2).(x2' + x3') 
             // W = (2, 4, 1, 6)
-
             // expected solution: {1, 0, 0, 1}, weight: 8
 
             var formula = new LogicalProductFormula(new IFormula[]
