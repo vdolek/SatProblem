@@ -20,7 +20,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
 
         public override string ToString()
         {
-            var str = string.Join("·", Formulas.Select(x => x.ToString()));
+            var str = string.Join(".", Formulas.Select(x => x.ToString()));
             return str;
         }
     }
