@@ -1,4 +1,5 @@
-﻿using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas;
+﻿using System;
+using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas;
 using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Models;
 using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -23,7 +24,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
                 {
                     new LiteralFormula(0),
                     new NegateFormula(new LiteralFormula(2)),
-                    new LiteralFormula(3),
+                    new LiteralFormula(3)
                 }),
                 // (x0' + x1 + x2')
                 new LogicalSumFormula(new IFormula[]
@@ -59,6 +60,8 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
                     new NegateFormula(new LiteralFormula(3))
                 })
             });
+
+            Console.WriteLine(formula);
 
             var instance = new Instance
             {

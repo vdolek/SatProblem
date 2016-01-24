@@ -17,5 +17,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
             var result = Formulas.Any(x => x.GetValue(configuration));
             return result;
         }
+
+        public override string ToString()
+        {
+            var str = string.Join(" + ", Formulas.Select(x => x.ToString()));
+            return $"({str})";
+        }
     }
 }

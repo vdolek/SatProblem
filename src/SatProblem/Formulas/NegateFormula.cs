@@ -14,5 +14,10 @@
             var res = !Formula.GetValue(configuration);
             return res;
         }
+
+        public override string ToString()
+        {
+            return $"{Formula}'";
+        }
     }
 }

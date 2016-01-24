@@ -17,5 +17,10 @@
             var res = configuration & variableBitArrayIndex;
             return res != 0;
         }
+
+        public override string ToString()
+        {
+            return $"x{VariableIndex}";
+        }
     }
 }
