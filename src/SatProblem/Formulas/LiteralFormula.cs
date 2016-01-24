@@ -1,6 +1,4 @@
-﻿using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Models;
-
-namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
+﻿namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
 {
     public class LiteralFormula : IFormula
     {
@@ -14,9 +12,9 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
             variableBitArrayIndex = (1L << VariableIndex);
         }
 
-        public bool GetValue(Configuration configuraion)
+        public bool GetValue(long configuration)
         {
-            var res = configuraion.State & variableBitArrayIndex;
+            var res = configuration & variableBitArrayIndex;
             return res != 0;
         }
     }

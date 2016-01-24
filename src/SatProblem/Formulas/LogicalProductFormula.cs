@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Models;
 
 namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
 {
@@ -13,9 +12,9 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas
             Formulas = formulas;
         }
 
-        public bool GetValue(Configuration configuraion)
+        public bool GetValue(long configuration)
         {
-            var result = Formulas.All(x => x.GetValue(configuraion));
+            var result = Formulas.All(x => x.GetValue(configuration));
             return result;
         }
     }

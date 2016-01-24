@@ -1,5 +1,4 @@
 ﻿using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Formulas;
-using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
@@ -19,10 +18,10 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
 
             var formula = new LogicalSumFormula(literalFormulas);
 
-            var conf1 = new Configuration(1L | (1L << 1) | (1L << 2));
-            var conf2 = new Configuration(1L | (1L << 1));
-            var conf3 = new Configuration(1L);
-            var conf4 = new Configuration(0);
+            var conf1 = 1L | (1L << 1) | (1L << 2);
+            var conf2 = 1L | (1L << 1);
+            var conf3 = 1L;
+            var conf4 = 0;
 
             Assert.IsTrue(formula.GetValue(conf1));
             Assert.IsTrue(formula.GetValue(conf2));
@@ -42,10 +41,10 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
 
             var formula = new LogicalProductFormula(literalFormulas);
 
-            var conf1 = new Configuration(1L | (1L << 1) | (1L << 2));
-            var conf2 = new Configuration(1L | (1L << 1));
-            var conf3 = new Configuration(1L);
-            var conf4 = new Configuration(0);
+            var conf1 = 1L | (1L << 1) | (1L << 2);
+            var conf2 = 1L | (1L << 1);
+            var conf3 = 1L;
+            var conf4 = 0;
 
             Assert.IsTrue(formula.GetValue(conf1));
             Assert.IsFalse(formula.GetValue(conf2));
@@ -65,10 +64,10 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Tests
 
             var formula = new LogicalProductFormula(literalFormulas);
 
-            var conf1 = new Configuration(1L | (1L << 1) | (1L << 2));
-            var conf2 = new Configuration(1L | (1L << 1));
-            var conf3 = new Configuration(1L);
-            var conf4 = new Configuration(0);
+            var conf1 = 1L | (1L << 1) | (1L << 2);
+            var conf2 = 1L | (1L << 1);
+            var conf3 = 1L;
+            var conf4 = 0;
 
             Assert.IsFalse(formula.GetValue(conf1));
             Assert.IsTrue(formula.GetValue(conf2));
