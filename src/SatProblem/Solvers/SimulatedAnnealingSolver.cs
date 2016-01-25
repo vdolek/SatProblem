@@ -34,12 +34,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
             {
                 currentConfiguration = bestConfiguration; // it is good to go back to best result sometimes
 
-                OnNewConfiguration(currentConfiguration);
-
                 for (var innerCycle = 0; Equilibrium(instance, innerCycle); ++innerCycle)
                 {
                     currentConfiguration = GetNextConfiguration(instance, temperature, currentConfiguration);
-                    
+                    OnNewConfiguration(currentConfiguration);
+
                     if (currentConfiguration.Weight > bestConfiguration.Weight)
                     {
                         bestConfiguration = currentConfiguration;

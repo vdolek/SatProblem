@@ -11,8 +11,8 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
         {
             //TestRandomInstanceGenerator();
             //Test1();
-            //CompareExperiment();
-            AproximationExperiment();
+            CompareExperiment();
+            //AproximationExperiment();
         }
 
         #region Tests
