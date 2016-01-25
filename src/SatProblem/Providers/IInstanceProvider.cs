@@ -2,7 +2,7 @@
 
 namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers
 {
-    public interface IInstaceProvider
+    public interface IInstanceProvider
     {
         Instance GetInstance(int variableCount);
     }

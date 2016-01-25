@@ -9,19 +9,19 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Runners
     {
         private const int BATCH_SIZE = 10;
 
-        public void Run(IInstaceProvider instaceProvider, ISolver exactSolver, ISolver solver)
+        public void Run(IInstanceProvider instanceProvider, ISolver exactSolver, ISolver solver)
         {
             var sizes = new[] { 10, 15, 20, 22, 25 };
             foreach (var size in sizes)
             {
-                RunForSize(instaceProvider, exactSolver, solver, size);
+                RunForSize(instanceProvider, exactSolver, solver, size);
                 Console.WriteLine();
             }
         }
 
-        private void RunForSize(IInstaceProvider instaceProvider, ISolver exactSolver, ISolver solver, int variableCount)
+        private void RunForSize(IInstanceProvider instanceProvider, ISolver exactSolver, ISolver solver, int variableCount)
         {
-            var instances = Enumerable.Range(0, BATCH_SIZE).Select(x => instaceProvider.GetInstance(variableCount)).ToArray();
+            var instances = Enumerable.Range(0, BATCH_SIZE).Select(x => instanceProvider.GetInstance(variableCount)).ToArray();
             var exactResults = instances.AsParallel().AsOrdered().Select(exactSolver.Solve).ToArray();
             var results = instances.Select(solver.Solve).ToArray();
 

@@ -6,7 +6,7 @@ using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Models;
 
 namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers
 {
-    public class RandomInstaceProvider : IInstaceProvider
+    public class RandomInstanceProvider : IInstanceProvider
     {
         private const int MIN_PRODUCT_LENGTH = 10;
         private const int MAX_PRODUCT_LENGTH = 50;
