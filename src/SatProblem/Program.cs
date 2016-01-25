@@ -23,7 +23,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
         private static void Test1()
         {
             var generator = new RandomInstaceProvider();
-            var instance = generator.GetInstance(20);
+            var instance = generator.GetInstance(25);
             Console.WriteLine(instance.Formula);
 
             var brutteForceSolver = new BrutteForceSolver();

@@ -33,11 +33,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
             for (var temperature = initTemperature; IsFrozen(temperature); temperature *= coolingCoeficient)
             {
                 currentConfiguration = bestConfiguration; // it is good to go back to best result sometimes
-
+                
                 for (var innerCycle = 0; Equilibrium(instance, innerCycle); ++innerCycle)
                 {
                     currentConfiguration = GetNextConfiguration(instance, temperature, currentConfiguration);
-
+                    
                     if (currentConfiguration.Weight > bestConfiguration.Weight)
                     {
                         bestConfiguration = currentConfiguration;

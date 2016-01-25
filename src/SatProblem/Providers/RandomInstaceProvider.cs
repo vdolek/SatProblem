@@ -30,7 +30,8 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers
                 var sumLength = rand.Next(MIN_SUM_LENGTH, MAX_SUM_LENGTH + 1);
                 for (var j = 0; j < sumLength; j++)
                 {
-                    var literalFormula = new LiteralFormula(rand.Next(variableCount));
+                    var variableIndex = rand.Next(variableCount);
+                    var literalFormula = new LiteralFormula(variableIndex);
 
                     if (rand.Next(2) == 0)
                     {

@@ -11,7 +11,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Helpers
 
             if (!res)
             {
-                return -1;
+                return 0;
             }
 
             var weight = instance.Weights.Where((x, idx) => (configuration & (1L << idx)) != 0).Sum();
