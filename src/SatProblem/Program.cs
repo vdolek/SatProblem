@@ -11,8 +11,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
         {
             //TestRandomInstanceGenerator();
             //Test1();
-            CompareTest();
+            //CompareExperiment();
+            AproximationExperiment();
         }
+
+        #region Tests
 
         private static void TestRandomInstanceGenerator()
         {
@@ -37,7 +40,11 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
             Console.WriteLine(solution2);
         }
 
-        private static void CompareTest()
+        #endregion
+
+        #region Compare Experiment
+
+        private static void CompareExperiment()
         {
             const int baseInitTemperature = 100;
             const int baseFrozenTemperature = 1;
@@ -101,5 +108,28 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
             runner.Run(instanceProvider, exactSolver, simulatedAnnealingSolver);
             Console.WriteLine();
         }
+
+        #endregion
+
+        #region
+
+        private static void AproximationExperiment()
+        {
+            var instanceProvider = new RandomInstanceProvider();
+            var runner = new AproximationRunner();
+
+            var sizes = new[] { 10, 20, 30, 40, 50, 60 };
+
+            foreach (var size in sizes)
+            {
+                Console.WriteLine($"Running size {size}.");
+                var instance = instanceProvider.GetInstance(size);
+                runner.Run(instance, $"{size}.txt");
+                Console.WriteLine($"Done.");
+                Console.WriteLine();
+            }
+        }
+
+        #endregion
     }
 }

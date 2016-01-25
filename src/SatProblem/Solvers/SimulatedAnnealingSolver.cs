@@ -8,7 +8,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
     {
         private static readonly Random rand = new Random(0);
 
-        private readonly double initTemperature = 100d;
+        private readonly double initTemperature = 200d;
         private readonly double frozenTemperature = 1d;
         private readonly double coolingCoeficient = 0.95;
         private readonly int equilibriumCoeficient = 10;
@@ -33,7 +33,9 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
             for (var temperature = initTemperature; IsFrozen(temperature); temperature *= coolingCoeficient)
             {
                 currentConfiguration = bestConfiguration; // it is good to go back to best result sometimes
-                
+
+                OnNewConfiguration(currentConfiguration);
+
                 for (var innerCycle = 0; Equilibrium(instance, innerCycle); ++innerCycle)
                 {
                     currentConfiguration = GetNextConfiguration(instance, temperature, currentConfiguration);
@@ -45,6 +47,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
                 }
             }
 
+            OnNewConfiguration(bestConfiguration);
             return bestConfiguration;
         }
 
@@ -86,6 +89,13 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
             var newConfiguration = currentConfiguration.Configuration ^ variableBitArray;
             var newWeight = instance.GetWeight(newConfiguration);
             return new EvaluatedConfiguration(instance, newConfiguration, newWeight);
+        }
+
+        public event EventHandler<EvaluatedConfiguration> NewConfiguration;
+
+        protected virtual void OnNewConfiguration(EvaluatedConfiguration e)
+        {
+            NewConfiguration?.Invoke(this, e);
         }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\IInstanceProvider.cs" />
     <Compile Include="Providers\RandomInstanceProvider.cs" />
+    <Compile Include="Runners\AproximationRunner.cs" />
     <Compile Include="Runners\CompareRunner.cs" />
     <Compile Include="Solvers\BrutteForceSolver.cs" />
     <Compile Include="Solvers\SimulatedAnnealingSolver.cs" />
