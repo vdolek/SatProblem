@@ -6,12 +6,12 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers
 {
     public class SimulatedAnnealingSolver : ISolver
     {
-        private readonly Random rand = new Random(0);
+        private static readonly Random rand = new Random(0);
 
         private readonly double initTemperature = 100d;
         private readonly double frozenTemperature = 1d;
         private readonly double coolingCoeficient = 0.95;
-        private readonly int equilibriumCoeficient = 2;
+        private readonly int equilibriumCoeficient = 10;
 
         public SimulatedAnnealingSolver()
         {

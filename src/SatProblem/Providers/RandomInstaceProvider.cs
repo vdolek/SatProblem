@@ -15,7 +15,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers
         private const int MIN_WEIGHT = 10;
         private const int MAX_WEIGHT = 50;
 
-        private static Random rand = new Random(0);
+        private static readonly Random rand = new Random(0);
 
         public Instance GetInstance(int variableCount)
         {

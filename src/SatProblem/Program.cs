@@ -1,5 +1,6 @@
 ﻿using System;
 using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Providers;
+using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Runners;
 using Cz.Volek.CVUT.FIT.MIPAA.SatProblem.Solvers;
 
 namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
@@ -9,7 +10,8 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
         static void Main(string[] args)
         {
             //TestRandomInstanceGenerator();
-            Test1();
+            //Test1();
+            CompareTest();
         }
 
         private static void TestRandomInstanceGenerator()
@@ -33,6 +35,16 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
             var solution2 = simulatedAnnealingSolver.Solve(instance);
             Console.WriteLine(solution1);
             Console.WriteLine(solution2);
+        }
+
+        private static void CompareTest()
+        {
+            var brutteForceSolver = new BrutteForceSolver();
+            var simulatedAnnealingSolver = new SimulatedAnnealingSolver();
+            var instanceProvider = new RandomInstaceProvider();
+            var runner = new CompareRunner();
+
+            runner.Run(instanceProvider, brutteForceSolver, simulatedAnnealingSolver);
         }
     }
 }
