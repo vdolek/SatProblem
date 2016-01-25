@@ -77,7 +77,7 @@ namespace Cz.Volek.CVUT.FIT.MIPAA.SatProblem
             {
                 Console.WriteLine("By equilibrium coeficient");
                 Console.WriteLine("---------------------------------------------------");
-                var equilibriumCoefs = new[] { 5, 10, 15, 20 };
+                var equilibriumCoefs = new[] { 2, 5, 10, 15 };
                 foreach (var equilibriumCoef in equilibriumCoefs)
                 {
                     RunSimulatedAnnealingForConfiguration(baseInitTemperature, baseFrozenTemperature, baseCoolingCoef, equilibriumCoef);
